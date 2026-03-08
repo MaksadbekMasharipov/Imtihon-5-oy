@@ -4,6 +4,7 @@ const modelTurlariRouter = require("./router/modelTurlari.routes");
 const modelsRouter = require("./router/models.routes");
 const carRouter = require("./router/car.routes");
 const connectDb = require("./config/db.config");
+const authRouter = require("./router/auth.routes");
 require("dotenv").config()
 
 const app = express()
@@ -17,6 +18,7 @@ app.use(cors())
 app.use(modelsRouter)
 app.use(modelTurlariRouter)
 app.use(carRouter)
+app.use(authRouter)
 
 
 app.listen(PORT, () => {
