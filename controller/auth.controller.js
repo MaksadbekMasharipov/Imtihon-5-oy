@@ -5,6 +5,7 @@ const sendMessaege = require("../utils/send-email");
 const { verify } = require("jsonwebtoken");
 const { access_token, refresh_token } = require("../utils/jwt");
 const CustomErrorhandler = require("../error/custom-error.handler");
+const logger = require("../utils/logger");
 
 const register = async (req, res, next) => {
     try {
@@ -47,8 +48,7 @@ const varify = async (req, res, next) => {
 
         const foundedUser = await AuthSchema.findOne({ email })
 
-        console.log("db otp:", foundedUser.otp)
-    console.log("sent otp:", otp)
+        logger.debug("OTP verification attempt")
 
         if (!foundedUser) {
             throw CustomErrorhandler.BadRequest("User not found")
@@ -105,7 +105,7 @@ const login = async (req, res, next) => {
         // Tekshirish va token berish
         const check = await bcrypt.compare(password, foundedUser.password)
 
-        console.log("hello");
+        logger.info("Login OTP issued", { email })
 
 
         if (check) {

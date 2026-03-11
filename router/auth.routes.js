@@ -1,5 +1,5 @@
 const { Router } = require("express")
-const { register, varify, login, logout, addProfileInfo, updateProfileInfo, deleteProfileInfo } = require("../controller/auth.controller")
+const { register, varify, login, logout} = require("../controller/auth.controller")
 const authorization = require("../middleware/authorization")
 
 

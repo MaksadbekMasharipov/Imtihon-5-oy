@@ -4,7 +4,7 @@ const Car = new Schema({
     name: {
         type: String,
         required: true,
-        set: (value) => value && value.trim(),   // Bo'sh joylarni olib tashlaydi
+        trim: true
     },
     price: {
         type: String,

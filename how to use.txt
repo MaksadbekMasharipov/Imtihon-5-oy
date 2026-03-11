@@ -1,0 +1,5 @@
+Qanday ishlatish bo'yicha ko'rsatma:
+
+1. /bosh_sahifa  - orqali mavjud modellarni va id larni ko'rish mumkin.
+2. /model/:id  - orqali shu modeldagi mavjud mashinalarni va id larni ko'rish mumkin.
+3. /car/:id - orqali mashinani to'liq ko'rish mumkin

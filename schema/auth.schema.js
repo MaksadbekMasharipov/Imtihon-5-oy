@@ -31,7 +31,13 @@ const Auth = new Schema({
     refreshToken: {
         type: String,
     },
-
+    savedCars: {
+        type: [{
+            type: Schema.Types.ObjectId,
+            ref: "car"
+        }],
+        default: []
+    }
 
 }, {
     versionKey: false,

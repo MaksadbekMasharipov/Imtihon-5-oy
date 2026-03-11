@@ -1,6 +1,9 @@
 const CustomErrorhandler = require("../error/custom-error.handler");
+const logger = require("../utils/logger");
 
 module.exports = function (err, req, res, next) {
+    logger.error("Request failed");
+
 
     // Custom error
     if (err instanceof CustomErrorhandler) {
