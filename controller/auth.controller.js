@@ -129,28 +129,6 @@ const login = async (req, res, next) => {
     }
 }
 
-const logout = async (req, res, next) => {
-    try {
-        // foydalanuvchi bor yoki yo'qligini tekshirish
-        const foundedUser = await AuthSchema.findOne({ email: req["user"].email })
-        if (!foundedUser) {
-            throw CustomErrorhandler.BadRequest("User not found")
-        }
-
-        res.clearCookie("refresh_token")
-        await AuthSchema.findByIdAndUpdate(foundedUser._id, {
-            refreshToken: ""
-        })
-
-        res.status(201).json({ message: "Logged out " });
-
-
-
-    } catch (error) {
-        next(error)
-    }
-}
-
 
 
 
@@ -158,5 +136,4 @@ module.exports = {
     register,
     varify,
     login,
-    logout,
 }
