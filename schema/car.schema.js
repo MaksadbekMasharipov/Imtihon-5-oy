@@ -50,6 +50,11 @@ const Car = new Schema({
         type: String,
         required: true,
     },
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: "auth",
+        required: true,
+    },
 },  {
     versionKey: false,
     timestamps: true

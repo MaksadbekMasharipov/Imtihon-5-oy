@@ -22,11 +22,11 @@ const Auth = new Schema({
     },
     otp: {
         type: String,
-        required: true,
+        default: "",
     },
     otpTime: {
         type: Number,
-        required: true,
+        default: 0,
     },
     refreshToken: {
         type: String,
