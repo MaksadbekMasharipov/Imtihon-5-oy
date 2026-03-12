@@ -159,3 +159,13 @@ error: Error logger
 info: Info logger
 debug: Debug logger
 error: Request failed
+warn: Console logger
+error: Error logger
+info: Info logger
+debug: Debug logger
+warn: Console logger
+error: Error logger
+info: Info logger
+debug: Debug logger
+info: Login OTP issued {"email":"mottimottiyev@gmail.com"}
+debug: OTP verification attempt
